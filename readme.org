@@ -1,6 +1,6 @@
 #+title: TexToSpeech
 
-This project converts LaTeX documents into plain text you might read aloud to yourself. Use this program alongside =espeak=, =festival=, or =gtts-cli= to convert a LaTeX document to speech without your figures, environments, and commands polluting the audio with gibberish.
+This project converts LaTeX documents into plain text you might read aloud. Use this program alongside =espeak=, =festival=, or =gtts-cli= to convert a LaTeX document to speech without your figures, environments, and commands polluting the audio with gibberish.
 
 As an example, consider the following test document (ripped from [[https://guides.nyu.edu/LaTeX/sample-document][NYU's Introduction to LaTeX]]):
 #+begin_src latex
@@ -50,15 +50,15 @@ For a new paragraph I can leave a blank space in my code.
 
 #+end_quote
 
-Notice that mathematics expressions convert to the text "blah"; this is how I usually proofread documents with mathematics. Later, I intend to convert the mathematics to speech using [[https://github.com/Speech-Rule-Engine/speech-rule-engine][Speech Rule Engine]], to proofread mathematics as well as prose.
+Try reading this with the command: =cat test.tex | textospeech | festival --tts=. Notice that mathematics expressions convert to the text "blah"; this is how I usually proofread documents with mathematics. Later, I intend to convert mathematics to speech using [[https://github.com/Speech-Rule-Engine/speech-rule-engine][Speech Rule Engine]], to proofread mathematics as well as prose.
 
 * Building and Installing
 Building this program requires a working copy of =cabal= and =ghc= version 9.2.4. Execute =cabal build= to build the program and =cabal install= to install the program to =~/.cabal/bin=.
 * Command Line Interface
 This is a work-in-progress! Eventually, I hope to allow you to:
 - Toggle conversion of mathematics to text,
-- Configure the list of skipped commands and environments
+- Configure the list of skipped commands and environments,
 - Configure the handling of citations,
 - More to come...
 * Limitations
-- LaTeX parsing is notoriously difficult. The library I use, [[https://github.com/Daniel-Diaz/HaTeX][HaTeX]], does a reasonable job but sometimes falls short. At the moment, I handle =\section*= commands specially because they are not parsed correctly. I know of other commands that don't work correctly. I will try to submit upstream parser issues as they arrive.
+- LaTeX parsing is notoriously hard. The library I use, [[https://github.com/Daniel-Diaz/HaTeX][HaTeX]], does a reasonable job but sometimes falls short. At the moment, I handle =\section*= commands specially because they do not parse correctly. I know of other commands that don't work correctly. I will try to submit upstream parser issues as they arrive.
