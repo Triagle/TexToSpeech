@@ -10,7 +10,7 @@ import Text.LaTeX (tableofcontents)
 import Text.LaTeX.Base.Syntax
 
 verbal :: S.Set String
-verbal = S.fromList ["alpha", "beta", "gamma", "delta", "epsilon", "eta", "theta", "iota", "kappa", "lambda", "mu", "nu", "xi", "omicron", "pi", "rho", "sigma", "tau", "upsilon", "phi", "chi", "xi", "omega"]
+verbal = S.fromList ["LaTeX", "alpha", "beta", "gamma", "delta", "epsilon", "eta", "theta", "iota", "kappa", "lambda", "mu", "nu", "xi", "omicron", "pi", "rho", "sigma", "tau", "upsilon", "phi", "chi", "xi", "omega"]
 
 saneSkip :: S.Set String
 saneSkip = S.fromList ["figure", "tabular"]
