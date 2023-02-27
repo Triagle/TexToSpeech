@@ -37,7 +37,7 @@ As an example, consider the following test document (ripped from [[https://guide
 
 Reading even this simple document with a text-to-speech program will waste your time reading =\begin{equation}=, possibly even character by character. The output from =TexToSpeech= is:
 
-#+begin_quote
+#+begin_example
 
 Section Hello World!.
 Hello World! Today I am learning LaTeX. LaTeX is a great program for writing math. I can write in line math such as blah . I can also give equations their own space:
@@ -48,7 +48,7 @@ LaTeX formats the sentence without any break. Also look how it doesn't matter ho
 
 For a new paragraph I can leave a blank space in my code.
 
-#+end_quote
+#+end_example
 
 Try reading this with the command: =cat test.tex | textospeech | festival --tts=. Notice that mathematics expressions convert to the text "blah"; this is how I usually proofread documents with mathematics. Later, I intend to convert mathematics to speech using [[https://github.com/Speech-Rule-Engine/speech-rule-engine][Speech Rule Engine]], to proofread mathematics as well as prose.
 
