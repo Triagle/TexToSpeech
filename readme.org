@@ -35,7 +35,7 @@ As an example, consider the following test document (ripped from [[https://guide
 \end{document} % This is the end of the document
 #+end_src
 
-Reading even this simple document with a text-to-speech program will waste your time reading =\begin{equation}=, possibly even character by character. The output from =TexToSpeech= is:
+Reading even this simple document with a text-to-speech program will waste your time reading latex commands like =\begin{equation}=, all your comments, and preamble, possibly even character by character. The output from =TexToSpeech= is:
 
 #+begin_example
 
