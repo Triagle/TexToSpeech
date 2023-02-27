@@ -6,6 +6,7 @@ import Control.Monad
 import Control.Monad.State.Lazy
 import qualified Data.Set as S
 import qualified Data.Text as T
+import Data.Text.ICU.Replace
 import Text.LaTeX (tableofcontents)
 import Text.LaTeX.Base.Syntax
 
@@ -94,3 +95,6 @@ filterCommands skipped (TeXComm name args)
 filterCommands skipped (TeXSeq left right) = filterCommands skipped left <> filterCommands skipped right
 filterCommands skipped (TeXEnv env args contents) = TeXEnv env args (filterCommands skipped contents)
 filterCommands skipped other = other
+
+stripExtraneousSpaces :: T.Text -> T.Text
+stripExtraneousSpaces = T.unlines . map (replaceAll "[ \\t]+" " " . T.strip) . T.lines
